@@ -49,7 +49,7 @@ fun PengelolaHalaman(
             composable(route = Halaman.Data.name){
                 DetailMahasiswaView(
                     uiStateMahasiswa = uiState,
-                    onClickButton = {
+                    onBackButton = {
                         navHost.popBackStack()
                     }
                 )
