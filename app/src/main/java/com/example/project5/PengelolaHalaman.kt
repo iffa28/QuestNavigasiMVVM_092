@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.project5.model.DataJenisKelamin
+import com.example.project5.ui.view.DetailMahasiswaView
 import com.example.project5.ui.view.FormMahasiswaView
 import com.example.project5.ui.viewmodel.MahasiswaViewModel
 
@@ -46,7 +47,9 @@ fun PengelolaHalaman(
                 )
             }
             composable(route = Halaman.Data.name){
-
+                DetailMahasiswaView(
+                    uiStateMahasiswa = uiState,
+                ) { }
             }
         }
 
