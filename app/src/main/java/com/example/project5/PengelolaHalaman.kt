@@ -40,6 +40,7 @@ fun PengelolaHalaman(
                         list -> konteks.resources.getString(list)
                     },
                     onSubmitClicked = {
+                        viewModel.saveDataMahasiswa(it)
 
                     }
                 )
