@@ -36,25 +36,17 @@ fun FormMahasiswaView(
     var nama by rememberSaveable { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
-    var noHP by remember { mutableStateOf("") }
+    var nim by remember { mutableStateOf("") }
     var selectedGender by remember { mutableStateOf("") }
 
     val dataMahasiswa: MutableList<String> = mutableListOf(nama, selectedGender, alamat)
-
-    val jenisKelamin = listOf("Laki-Laki", "Perempuan")
-
-    var namaUser by rememberSaveable { mutableStateOf("") }
-    var emailUser by remember { mutableStateOf("") }
-    var alamatUser by remember { mutableStateOf("") }
-    var noHpUser by remember { mutableStateOf("") }
-    var selectedGenderUser by remember { mutableStateOf("") }
 
     Column (modifier.fillMaxSize().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         OutlinedTextField(value = nama,
             onValueChange = {nama = it},
             placeholder = { Text("Masukkan Nama") },
             label = { Text("Nama") },
-            modifier = Modifier.fillMaxWidth().padding(5.dp)
+            modifier = Modifier.fillMaxWidth().padding(1.dp)
         )
 
         Row(modifier = Modifier.align(Alignment.Start)){
@@ -71,34 +63,25 @@ fun FormMahasiswaView(
             placeholder = { Text("Masukkan Email") },
             label = { Text("Email") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-            modifier = Modifier.fillMaxWidth().padding(5.dp)
+            modifier = Modifier.fillMaxWidth().padding(1.dp)
         )
         OutlinedTextField(value = alamat,
             onValueChange = {alamat = it},
             placeholder = { Text("Masukkan Alamat") },
             label = { Text("Alamat") },
-            modifier = Modifier.fillMaxWidth().padding(5.dp)
+            modifier = Modifier.fillMaxWidth().padding(1.dp)
         )
-        OutlinedTextField(value = noHP,
-            onValueChange = {noHP = it},
-            placeholder = { Text("Masukkan Nomor HP") },
-            label = { Text("No.Hp") },
+        OutlinedTextField(value = nim,
+            onValueChange = {nim = it},
+            placeholder = { Text("Masukkan NIM") },
+            label = { Text("NIM") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.fillMaxWidth().padding(5.dp)
+            modifier = Modifier.fillMaxWidth().padding(1.dp)
         )
 
         Button(onClick = { onSubmitClicked(dataMahasiswa)})
         {
             Text("Simpan")
-        }
-
-        Card(modifier.size(height = 250.dp, width = 320.dp)) {
-            CardSection(judulParam = "Nama", isiParam = namaUser)
-            CardSection(judulParam = "Jenis Kelamin", isiParam = selectedGenderUser)
-            CardSection(judulParam = "Email", isiParam = emailUser)
-            CardSection(judulParam = "Alamat", isiParam = alamatUser)
-            CardSection(judulParam = "No.Hp", isiParam = noHpUser)
-
         }
 
     }

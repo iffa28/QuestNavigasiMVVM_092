@@ -37,10 +37,10 @@ fun PengelolaHalaman(
             composable(route = Halaman.Form.name){
                 val konteks = LocalContext.current
                 FormMahasiswaView(
-                    listJK = DataJenisKelamin.listJK.map {
-                        list -> konteks.resources.getString(list)
-                    },
-                    onSubmitClicked = {
+                    listJK = DataJenisKelamin.listJK.map{
+                            id -> konteks.resources.getString(id)},
+
+                        onSubmitClicked = {
                         viewModel.saveDataMahasiswa(it)
                         navHost.navigate(Halaman.Data.name)
                     }

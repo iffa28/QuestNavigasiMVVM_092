@@ -15,7 +15,9 @@ import com.example.project5.model.DataMahasiswa
 @Composable
 fun DetailMahasiswaView(
     modifier: Modifier = Modifier,
-    uiStateMahasiswa: DataMahasiswa){
+    uiStateMahasiswa: DataMahasiswa,
+    onClickButton: () -> Unit
+){
     val listDataMhs = listOf(
         Pair("Nama", uiStateMahasiswa.nama),
         Pair("Gender", uiStateMahasiswa.gender),
