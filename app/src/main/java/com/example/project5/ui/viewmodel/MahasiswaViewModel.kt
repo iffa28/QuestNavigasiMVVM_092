@@ -17,7 +17,9 @@ class MahasiswaViewModel : ViewModel() {  //dinyatakan class viewmodel krn inher
             dataMhs.copy(
                 nama = listDM[0],
                 gender = listDM[1],
-                alamat = listDM[2]
+                email = listDM[2],
+                alamat = listDM[3],
+                nim = listDM[4]
             )
         }
     }

@@ -39,7 +39,7 @@ fun FormMahasiswaView(
     var nim by remember { mutableStateOf("") }
     var selectedGender by remember { mutableStateOf("") }
 
-    val dataMahasiswa: MutableList<String> = mutableListOf(nama, selectedGender, alamat)
+    val dataMahasiswa: MutableList<String> = mutableListOf(nama, selectedGender, email, alamat, nim)
 
     Column (modifier.fillMaxSize().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         OutlinedTextField(value = nama,
