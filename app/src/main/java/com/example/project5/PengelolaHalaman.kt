@@ -38,8 +38,11 @@ fun PengelolaHalaman(
                 FormMahasiswaView(
                     listJK = DataJenisKelamin.listJK.map {
                         list -> konteks.resources.getString(list)
+                    },
+                    onSubmitClicked = {
+
                     }
-                ) { }
+                )
             }
         }
 
