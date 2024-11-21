@@ -41,6 +41,7 @@ fun PengelolaHalaman(
                     },
                     onSubmitClicked = {
                         viewModel.saveDataMahasiswa(it)
+                        navHost.navigate(Halaman.Data.name)
 
                     }
                 )
